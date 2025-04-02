@@ -1,116 +1,179 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .task-form {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  #taskInput {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  #taskInput:focus {
-    outline: none;
-    border-color: #4361ee;
-  }
-  
-  #addTaskBtn {
-    padding: 10px 15px;
-    margin-left: 10px;
-    background-color: #4361ee;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  #addTaskBtn:hover {
-    background-color: #3f37c9;
-  }
-  
-  .filter-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .filter-buttons button {
-    flex: 1;
-    padding: 8px;
-    margin: 0 5px;
-    background: #e9ecef;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .filter-buttons button.active {
-    background: #4361ee;
-    color: white;
-  }
-  
-  #taskList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .task-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .task-checkbox {
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .task-title {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .task-title.completed {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
-  .task-actions {
-    display: flex;
-  }
-  
-  .task-actions button {
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 5vw;
+    }
+
+    .container {
+      max-width: 60vw;
+      margin: 10vh auto 0;
+      background: #ffffff;
+      padding: 4vw;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00796b;
+      font-size: 3.5vw;
+    }
+
+    .task-form {
+      display: flex;
+      margin-bottom: 3vw;
+    }
+
+    #taskInput {
+      flex: 1;
+      padding: 1.5vw;
+      border: 1px solid #b2dfdb;
+      border-radius: 8px;
+      font-size: 1.2vw;
+      transition: border-color 0.3s ease;
+    }
+
+    #taskInput:focus {
+      outline: none;
+      border-color: #009688;
+    }
+
+    #addTaskBtn {
+      padding: 1.5vw 2vw;
+      margin-left: 1vw;
+      background-color: #009688;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2vw;
+      transition: background-color 0.3s ease;
+    }
+
+    #addTaskBtn:hover {
+      background-color: #00796b;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3vw;
+    }
+
+    .filter-buttons button {
+      flex: 1;
+      padding: 1vw;
+      margin: 0 0.5vw;
+      background: #c8e6c9;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1vw;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button.active {
+      background: #009688;
+      color: white;
+    }
+
+    #taskList {
+      list-style: none;
+      padding: 0;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      padding: 1.5vw;
+      margin-bottom: 1vw;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .task-item.completed {
+      background-color: #e0f2f1;
+    }
+
+    .task-checkbox {
+      margin-right: 1vw;
+      cursor: pointer;
+    }
+
+    .task-title {
+      flex: 1;
+      margin-right: 1vw;
+      font-size: 1.2vw;
+    }
+
+    .task-title.completed {
+      text-decoration: line-through;
+      color: #80cbc4;
+    }
+
+    .task-actions {
+      display: flex;
+    }
+
+    .task-actions button {
+      padding: 0.8vw 1.5vw;
+      margin-left: 0.5vw;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1vw;
+    }
+
+    .task-actions button.delete {
+      background-color: #ef5350;
+      color: white;
+    }
+
+    .task-actions button.edit {
+      background-color: #ff9800;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10vw;
+      }
+
+      .container {
+        max-width: 90vw;
+        padding: 6vw;
+      }
+
+      h1 {
+        font-size: 5vw;
+      }
+
+      #taskInput {
+        font-size: 3vw;
+        padding: 3vw;
+      }
+
+      #addTaskBtn {
+        font-size: 3vw;
+        padding: 3vw 4vw;
+      }
+
+      .filter-buttons button {
+        font-size: 3vw;
+        padding: 2vw;
+      }
+
+      .task-title {
+        font-size: 3vw;
+      }
+
+      .task-actions button {
+        font-size: 2.5vw;
+        padding: 2vw 3vw;
+      }
+    }
+ 
