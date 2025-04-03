@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const API_URL = 'http://localhost:3001/tasks';
     const taskInput = document.getElementById('taskInput');
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       completed: document.getElementById('showCompleted'),
       pending: document.getElementById('showPending')
     };
-  
+    const sortTasksBtn = document.getElementById('ordenados');
     let tasks = [];
     let currentFilter = 'all';
   
@@ -21,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Enter') addTask();
     });
   
+    sortTasksBtn.addEventListener('click', sortTasks)
+
     Object.entries(filterButtons).forEach(([filter, button]) => {
       button.addEventListener('click', () => setFilter(filter));
     });
@@ -161,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
         saveTasksToLocalStorage();
       }
     }
-  
+    
+
+    
     function setFilter(filter) {
       currentFilter = filter;
       updateFilterButtons();
@@ -225,6 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
+    function sortTasks(){
+      tasks.sort((a,b)=>{
+        return new Date(a.createdAt)- new Date(b.createdAt);
+      })
+      renderTasks();
+    }
     // LocalStorage functions
     function saveTasksToLocalStorage() {
       localStorage.setItem('tasks', JSON.stringify(tasks));
